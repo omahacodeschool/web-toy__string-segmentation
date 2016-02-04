@@ -7,7 +7,7 @@ class SSTest < Minitest::Test
     MyApp
   end
 
-  The actual tests go below this comment.
+  #The actual tests go below this comment.
   def test_welcome
     get "/"
 
