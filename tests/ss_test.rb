@@ -16,15 +16,15 @@ class SSTest < Minitest::Test
     assert_includes last_response.body, "Welcome!"
   end
 
-  # def test_string
-  #   random_string = "turtlebluecat"
+  def test_string
+    random_string = "turtlebluecat"
 
-  #   get "/#{random_string}"
+    get "/#{random_string}"
 
-  #   assert last_response.ok?
+    assert last_response.ok?
 
-  #   assert_includes last_response.body, random_string
-  # end
+    assert_includes last_response.body, "turtle, blue, cat"
+  end
 
 end
 
