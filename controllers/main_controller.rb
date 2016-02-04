@@ -23,3 +23,9 @@ MyApp.get "/:string" do
   # combined document back to the client.
   erb :"main/return_words"
 end
+
+# post '/return_words' do
+#   string = SplitUpStringIntoWords.new
+#   string.segment_string(input_from_form)
+#   redirect "/return_words/:string
+# end

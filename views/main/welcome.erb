@@ -1,6 +1,14 @@
 <h1>Welcome to Beth's magic word wizard!</h1>
 
 
+<!--        The input should be assigned to :string so my controller knows where to go. -->
 
-	<p><label>Please enter a string of words with no spaces in between.</label>
-      <textarea name="string">turtlebluecat</textarea></p>
+
+<form action="/return_words" method="post" enctype="multipart/form-data">
+  <p>Please enter a string of words with no spaces in between.</p>
+  <input type="text" name="string" placeholder="turtlebluecat">
+
+  
+  <p>When you're ready, click the button below to see the magic.</p>
+  <input type="submit">
+</form>
