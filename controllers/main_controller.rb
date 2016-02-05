@@ -16,8 +16,13 @@ MyApp.get "/" do
   erb :"main/welcome"
 end
 
+
+MyApp.get "/:random" do
+  @dog = Dog.new
+  @wss = WebStringSegmenter.new
+  erb :"main/welcome"
+end
+
 # need to make a method that gets the user's string
 # the string will be from the url
-
-
 

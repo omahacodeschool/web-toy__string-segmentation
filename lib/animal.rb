@@ -1,11 +1,11 @@
 class Dog
   
   def speak
-    return "Bark!"
+    return "I'm going kill you or I love you! I can't differentiate."
   end
 
   def celebrate
-    return "Woof"
+    return "I believe you have not had the chance to pet me yet."
   end
 
 
