@@ -1,3 +1,4 @@
+
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 MyApp.get "/" do
@@ -7,5 +8,16 @@ MyApp.get "/" do
   # 
   # Then it will combine that view file with the layout file and sent the
   # combined document back to the client.
+  erb :"main/welcome"
+end
+
+MyApp.get "/:random" do
+
+  x = StringSegmentor.new
+
+  y = x.segment_string(params[:random]).join(", ")
+
+  params[1] = y
+
   erb :"main/welcome"
 end
