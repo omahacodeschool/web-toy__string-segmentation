@@ -18,13 +18,12 @@ class SSTest < Minitest::Test
   end
 
   def test_string
-    random_string = "turtlebluecat"
 
-    get "/#{random_string}"
+    get "/words?string=runningtrancecat"
 
     assert last_response.ok?
 
-    assert_includes last_response.body, "turtle, blue, cat"
+    assert_includes last_response.body, "running, trance, cat"
   end
 
 end
