@@ -1,6 +1,8 @@
 require_relative "../lib/animal"
 require_relative "../lib/string_segmenter"
 
+
+
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 # This is a controller action.
@@ -18,8 +20,10 @@ end
 
 
 MyApp.get "/:random" do
+  str = params[:random]
   @dog = Dog.new
-  @wss = WebStringSegmenter.new
+  wss = WebStringSegmenter.new
+  @segmented = wss.segment_string(str)
   erb :"main/welcome"
 end
 

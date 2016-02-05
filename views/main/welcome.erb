@@ -1,12 +1,11 @@
 <h1>Welcome!</h1>
 
 <h2>Random String: <%= params[:random] %></h2>
-<h2>Segmented String: <%=  %></h2>
+<h2>Segmented String: <%= @segmented %></h2>
 <h3>This only works if the String contains words in our dictionary!</h3>
 <h4>Otherwise, our server will enter an infinite loop and eventually melt.</h4>
 <br>
 <h3>Earlier Runs to confirm the code.</h3>
-<p><%= @wss.segment_string("onetwothree")%></p>
-<p><%= @wss.segment_string("onestwosthrees")%></p>
+
 <p>What Maverick says: "<%= @dog.speak %>"</p>
 <p>What Dutch says: "<%= @dog.celebrate %>"</p>
