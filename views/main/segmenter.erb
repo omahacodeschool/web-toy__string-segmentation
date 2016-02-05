@@ -1,3 +1,14 @@
-<h1>Behold! I've magically seperated your gibberish into words!</h1>
+<center><h1>Welcome to the magical... word... seperator... thing!</h1></center>
 
-<%= @segmented_string %>
+<center><img src=http://www.thetimes.co.uk/tto/multimedia/archive/00729/33816122-0537-11e4-_729135c.jpg><center>
+
+<center><form action="/main/segmenter" method="post">
+    <h2>I'm going to show you some programming magic.<h2>
+    <br/>
+    <h2> Type in three words (but leave on the spaces!) and the computer will magically seperate them!</h2><input type="text" name="jumbled_string">
+    <br/>
+    <input type="submit">
+</form></center>
+
+<br/>
+<center><h1><%= @segmented_string %></h1></center>
