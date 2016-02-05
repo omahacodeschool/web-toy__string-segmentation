@@ -1,6 +1,8 @@
+require_relative 'string_segmenter'
+require 'pry'
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
-MyApp.get "/" do
+MyApp.get "/home" do
   # If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given
   # location. So it's going to look for views/main/welcome.erb.
@@ -9,3 +11,13 @@ MyApp.get "/" do
   # combined document back to the client.
   erb :"main/welcome"
 end
+
+MyApp.get "/:num" do
+  a = segment_string(params[:num])
+  @y = a.join(" ")
+  erb :"main/stringsegment"
+end
+
+
+
+# segment_string("applepiebottom")

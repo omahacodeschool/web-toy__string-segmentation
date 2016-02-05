@@ -8,7 +8,11 @@ class SSTest < Minitest::Test
   end
 
   # The actual tests go below this comment.
-  
+  def segment_string
+    get 'avacadoburritocat'
+    assert last_response.ok?
+    assert_includes last_response.body, "avacado burrito cat"
+  end
 end
 
 
