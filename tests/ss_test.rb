@@ -10,7 +10,7 @@ class SSTest < Minitest::Test
   #Actual tests
 
   def test_ones_twos_threes
-    get
+    get '/onestwosthrees'
 
     assert last_response.ok?
 
