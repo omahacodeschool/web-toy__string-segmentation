@@ -148,7 +148,7 @@ class Segmentation
   #
   # Returns an Array consisting of dictionary words
   def run_through_segmentation(sample_input)
-    sample_input = str
+    sample_input = @str
     set_initial_values
     split_string
 

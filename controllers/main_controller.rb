@@ -13,8 +13,8 @@ MyApp.get "/" do
 end
 
 MyApp.get "/:num" do
-  Website = Segmentation.new
-  @please_work = Website.run_through_segmentation(:num)
+  website = Segmentation.new
+
   #create new member of class here (ex. @dog = Dog.new)
   #in views, set variables: ex. @dog.speak)
 
