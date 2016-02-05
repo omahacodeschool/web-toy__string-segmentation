@@ -1,5 +1,6 @@
 # Controllers
 
+
 Controllers are files in which we define "controller actions", which dictate what code to run when requests are made.
 
 In this Web framework, routes are defined alongside their related controller action.
