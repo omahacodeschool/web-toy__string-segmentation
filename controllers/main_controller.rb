@@ -18,6 +18,15 @@ MyApp.get "/:num" do
   erb :"main/stringsegment"
 end
 
+MyApp.get '/hello/' do
+    erb :hello_form
+end
 
+MyApp.post '/hello/' do
+    greeting = params[:greeting]
+    x = segment_string(greeting)
+    y = x.join(" ")
+    # name = params[:name] || "Nobody"
+    erb :index, :locals => {'greeting' => y}
 
-# segment_string("applepiebottom")
+end
