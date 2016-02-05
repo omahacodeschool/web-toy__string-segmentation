@@ -9,5 +9,5 @@ end
  # RETURNS dictionary Array as a String
 def available_dictionary
   dictionary = ["cat", "cats","running", "run", "trance", "publish", "pub"]
-  return dictionary.join(" ")
+  return dictionary.join(", ")
 end

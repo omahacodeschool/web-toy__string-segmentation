@@ -7,19 +7,27 @@ class Segment
 		@word_index = Hash.new(0)
 		@first_letter = 0
 		@last_letter = 0
+		@fail_count = 0
 	end
 
-	def available_words()
-	  working_dictionary = ["cat", "cats","running", "run", "trance", "publish", "pub"]
-	  return working_dictionary.join(" ")
+	# Method executes program. Returns a String.
+	def run_program()
+		final_words()
+		segmented_output()
 	end
 
-	def testing ()
-		return "test"
+	# RETURNS words Array as a String if the length of the joined words array is indentical to the length of the inputted string
+	# RETURNS String if the length of the joined array and inputted string length are not identical.
+	def segmented_output
+		if @words.join("").length == @str.length
+			return @words.join(", ")
+		else
+			 get_error_message()
+		end
 	end
-
+	
 	def final_words
-		while @last_letter <= @str.length do  
+		while @last_letter <= @str.length && @fail_count <= (@str.length * @str.length) do  
 	    if danglers?
 	      @last_letter = index_of_most_recently_found_word + 1
 
@@ -28,6 +36,8 @@ class Segment
 	      @word_index.delete(most_recently_found_word)
 
 	      @first_letter = index_of_most_recently_found_word + 1 
+
+	      @fail_count += 1
 
 	    elsif !valid_word?(part_of_word)
 	      @last_letter += 1
@@ -40,7 +50,7 @@ class Segment
 	    end
 	  end
 
-  	return @words.join(" ")
+  	return @words
 	end
 
 	# Get a segment of the full string based on a starting and ending point.
@@ -101,4 +111,9 @@ class Segment
 	  i = index_of_most_recently_found_word
 	  @word_index.key(i)
 	end
+
+	def get_error_message()
+	  return "Invalid word selection. Please try again."
+	end
+
 end
