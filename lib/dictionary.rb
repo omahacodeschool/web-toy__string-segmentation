@@ -5,3 +5,9 @@ def valid_word?(word)
   # Return true if your dictionary contains `word`
   # or false if it does not.
 end
+
+ # RETURNS dictionary Array as a String
+def available_dictionary
+  dictionary = ["cat", "cats","running", "run", "trance", "publish", "pub"]
+  return dictionary.join(" ")
+end

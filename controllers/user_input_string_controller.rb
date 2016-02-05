@@ -1,8 +1,4 @@
-# The path being defined for this controller action is just "/", meaning 
-# the root path. It's the homepage.
-MyApp.get "/" do
-  erb :"main/welcome"
-end
+require_relative '../lib/string_segmenter'
 
 # posts form data from view/string_segmenter.erb to /user_input_string.erb
 # @user_segmentation: instance of the Segment class in lib/string_segmenter.rb
