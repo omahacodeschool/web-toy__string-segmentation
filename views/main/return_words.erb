@@ -1,3 +1,7 @@
- <%=string=SplitUpStringIntoWords.new%>
+<!-- require 'string_segmenter'
+ -->
+<p> Your string was <%=params[:string]%></p>
 
-<p>Your string returns <%=string.segment_string(input_from_form).join(' ')%></p>
+<p><%=params[:string] = SplitUpStringIntoWords.new%></p>
+
+ <p>Your string returns <%=params[:string].segment_string(:string).join(' ')%></p>

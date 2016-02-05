@@ -85,3 +85,7 @@ class SplitUpStringIntoWords
 	end
 end
 
+
+# x = SplitUpStringIntoWords.new
+# puts x.segment_string("catrunningtrance")
+

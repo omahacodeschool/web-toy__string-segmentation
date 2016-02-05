@@ -1,7 +1,6 @@
 # require 'string_segmenter'
 require_relative "../lib/string_segmenter.rb"
 
-
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 MyApp.get "/" do
@@ -29,3 +28,8 @@ end
 #   string.segment_string(input_from_form)
 #   redirect "/return_words/:string
 # end
+
+# get 
+#  @string = Cat.new(params[:string])
+#   @result =  @string.string_segmenter(:string.join(' ')]
+#   redirect "/:string
