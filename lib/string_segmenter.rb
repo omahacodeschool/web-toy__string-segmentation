@@ -24,6 +24,6 @@ class Segmenter
       end
       i +=1
     end
-    arr.reverse
+    return arr.reverse
   end
 end
