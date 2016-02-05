@@ -11,20 +11,18 @@ MyApp.get "/" do
   erb :"main/welcome"
 end
 
-MyApp.get "/segmenter" do
+MyApp.get "/segmenter_form" do
 
     erb :"main/segmenter_form"
 end 
 
-MyApp.post "/segmenter" do
+MyApp.post "/segmenter_form" do
 
     x = String_Segmenter.new
     jumbled_string = params[:jumbled_string]
-    x.set_str(:jumbled_string)
-    x.segment_string
-    a = x.segment_string
-    @segmented_string = a.join(" ") 
-    @segmented_string
+    x.set_str(jumbled_string)
+    final = x.segment_string.join(" ")
+    @segmented_string = final
     
     erb :"main/segmenter"
 end 
