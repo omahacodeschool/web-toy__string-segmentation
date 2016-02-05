@@ -15,7 +15,7 @@ MyApp.get "/:random" do
 
   x = StringSegmentor.new
 
-  y = x.segment_string(params[:random]).join(", ")
+  y = x.segment_string(params[:random]).join(" ")
 
   params[1] = y
 

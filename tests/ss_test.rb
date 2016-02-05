@@ -17,7 +17,7 @@ class SSTest < Minitest::Test
 
     assert last_response.ok?
 
-    assert_includes last_response.body, "i, love, you"
+    assert_includes last_response.body, "i love you"
   end
 end
 
