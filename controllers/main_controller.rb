@@ -16,7 +16,7 @@ MyApp.get "/segmenter_form" do
     erb :"main/segmenter_form"
 end 
 
-MyApp.post "/segmenter_form" do
+MyApp.post "/main/segmenter" do
 
     x = String_Segmenter.new
     jumbled_string = params[:jumbled_string]
