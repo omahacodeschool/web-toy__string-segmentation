@@ -4,7 +4,6 @@ require_relative "../lib/string_segmenter.rb"
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 MyApp.get "/" do
- @input = params[:string]
   # If a GET request is made to the root path, the following line of code
   # looks for a .erb view file located in the 'views' directory at the given
   # location. So it's going to look for views/main/welcome.erb.
@@ -26,11 +25,8 @@ MyApp.get "/:string" do
 end
 
 # MyApp.post '/return_words' do
-#   string.segment_string(params[:string])
+#   @string = SplitUpStringIntoWords.new
+#   @string.segment_string(params[:string])
 #   redirect "/:string"
 # end
 
-# get 
-#  @string = Cat.new(params[:string])
-#   @result =  @string.string_segmenter(:string.join(' ')]
-#   redirect "/:string
