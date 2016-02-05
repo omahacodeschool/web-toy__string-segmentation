@@ -8,7 +8,22 @@ class SSTest < Minitest::Test
   end
 
   # The actual tests go below this comment.
-  
+  def test_welcome
+    get '/'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, '<a href="/string_segmenter"'
+  end
+
+  def test_string_segmenter
+    get '/string_segmenter'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, '<p>Available words: <br>'
+  end
+
 end
 
 
