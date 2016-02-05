@@ -9,3 +9,9 @@ MyApp.get "/" do
   # combined document back to the client.
   erb :"main/welcome"
 end
+class MyApp
+  post '/user_input_string' do
+   
+   "Result is #{@user_segmentation = Segment.new(params[:user_input]).final_words}"
+  end
+end

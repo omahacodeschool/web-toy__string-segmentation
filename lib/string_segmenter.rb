@@ -9,6 +9,11 @@ class Segment
 		@last_letter = 0
 	end
 
+	def available_words()
+	  working_dictionary = ["cat", "cats","running", "run", "trance", "publish", "pub"]
+	  return working_dictionary.join(" ")
+	end
+
 	def testing ()
 		return "test"
 	end

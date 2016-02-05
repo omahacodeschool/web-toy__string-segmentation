@@ -1,8 +1,13 @@
-require_relative '../lib/string_segmenter.rb'
-require_relative '../lib/dictionary.rb'
+require_relative '../lib/string_segmenter'
+require_relative '../lib/dictionary'
 
 MyApp.get "/string_segmenter" do
-  @segment_input = Segment.new("cattrancerun")
-  @current_dictionary = available_words()
+  @user_segmentation = Segment.new("  ")
   erb :"/string_segmenter"
+end
+
+class MyApp
+  post '/user_input_string' do
+   "#{@user_segmentation = Segment.new(params[:user_input]).final_words}"
+  end
 end
