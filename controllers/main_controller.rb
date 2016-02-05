@@ -1,3 +1,4 @@
+require './lib/string_segmenter'
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 MyApp.get "/" do
@@ -9,3 +10,22 @@ MyApp.get "/" do
   # combined document back to the client.
   erb :"main/welcome"
 end
+
+MyApp.get "/segmenter_form" do
+
+    erb :"main/segmenter_form"
+end 
+
+MyApp.post "/main/segmenter" do
+
+    x = String_Segmenter.new
+    jumbled_string = params[:jumbled_string]
+    x.set_str(jumbled_string)
+    final = x.segment_string.join(" ")
+    @segmented_string = final
+    
+    erb :"main/segmenter"
+end 
+
+
+

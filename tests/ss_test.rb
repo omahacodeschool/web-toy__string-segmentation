@@ -7,7 +7,24 @@ class SSTest < Minitest::Test
     MyApp
   end
 
-  # The actual tests go below this comment.
+  #Actual tests
+
+  def test_ones_twos_threes
+    get '/onestwosthrees'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, "ones twos threes"
+  end
+
+  def test_other
+    get '/pavewalkedorigin'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, "pave walked origin"
+
+  end
   
 end
 
