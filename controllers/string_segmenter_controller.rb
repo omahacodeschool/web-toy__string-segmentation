@@ -6,8 +6,3 @@ MyApp.get "/string_segmenter" do
   erb :"/string_segmenter"
 end
 
-class MyApp
-  post '/user_input_string' do
-   "#{@user_segmentation = Segment.new(params[:user_input]).final_words}"
-  end
-end
