@@ -11,13 +11,14 @@ class SSTest < Minitest::Test
 
   def test_string_segmentor
     
-   random_string = "/iloveyou"
-
+    random_string = "/iloveyou"
+  
     get "/#{random_string}"
 
     assert last_response.ok?
 
     assert_includes last_response.body, "i love you"
+    
   end
 end
 
