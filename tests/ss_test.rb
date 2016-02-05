@@ -8,7 +8,17 @@ class SSTest < Minitest::Test
   end
 
   # The actual tests go below this comment.
-  
+
+  def test_string_segmenter
+    string = "onetwothree"
+    get '/#{string}'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, "one, two, three"
+  end
+
+
 end
 
 
