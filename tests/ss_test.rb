@@ -8,6 +8,29 @@ class SSTest < Minitest::Test
   end
 
   # The actual tests go below this comment.
+   def test_string_segmenter
+    get '/string_segmenter/turtlebearlion'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, "turtle, bear, lion"
+  end
+
+  def test_links_on_homepage
+    get '/'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, '<a href="/string_segmenter"'
+  end
+
+  def test_links_on_string_segmenter
+    get '/string_segmenter'
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, '<a href="/" >main</a>'
+  end
   
 end
 
