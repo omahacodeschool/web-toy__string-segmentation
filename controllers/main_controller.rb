@@ -14,7 +14,9 @@ MyApp.get "/" do
   erb :"main/welcome"
 end
 
-MyApp.get "/num" do
-  @x = segment_string(params[:num])
-  erb :"main/string_segmenter"
+MyApp.get "/:n" do
+  x = segment_string(params[:n])
+  @y = x.join(" ")
+  # x = Segmenter.new
+  erb :"main/welcome"
 end
