@@ -15,8 +15,13 @@ class SplitUpStringIntoWords
 		while @last_letter <= str.length do
 
 			if danglers?(str)
-				@last_letter = change_value_of_letter_variable
-				delete_from_hash
+				if change_value_of_letter_variable == nil
+					return nil
+
+				else
+					@last_letter = change_value_of_letter_variable
+					delete_from_hash
+				end
 				
 				if you_just_deleted_the_first_word_in_hash
 					@first_letter = 0
@@ -35,7 +40,6 @@ class SplitUpStringIntoWords
 		end
 		return @word_index.keys
 	end
-
 
 	#Check for conditions in which there are danglers.
 	#if the current collection of characters is not a word
@@ -59,7 +63,11 @@ class SplitUpStringIntoWords
 	#
 	#Returns the max value of the hash and adds one to it.
 	def change_value_of_letter_variable
-		return @word_index.values.max + 1
+		if @word_index.values.max == nil
+			return nil
+		else
+			return @word_index.values.max + 1
+		end
 	end
 
 	#Delete the previous word and it's value from the Hash.
@@ -86,6 +94,6 @@ class SplitUpStringIntoWords
 end
 
 
-# x = SplitUpStringIntoWords.new
-# puts x.segment_string("catrunningtrance")
+x = SplitUpStringIntoWords.new
+puts x.segment_string("heartfarttrance")
 
