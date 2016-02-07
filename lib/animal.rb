@@ -5,7 +5,7 @@ class Dog
   end
 
   def celebrate
-    return "I believe you have not had the chance to pet me yet."
+    return "I believe you have not yet had the chance to pet me."
   end
 
 
