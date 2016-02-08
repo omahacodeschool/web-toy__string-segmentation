@@ -1,3 +1,5 @@
+require_relative "../lib/string_segmenter"
+
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 MyApp.get "/" do
@@ -8,4 +10,9 @@ MyApp.get "/" do
   # Then it will combine that view file with the layout file and sent the
   # combined document back to the client.
   erb :"main/welcome"
+end
+
+MyApp.get "/:str" do
+  @words = StringSegmenter.new.segment_string(params[:str])
+  erb :"main/show_words"
 end
