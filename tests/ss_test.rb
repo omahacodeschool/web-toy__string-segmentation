@@ -26,6 +26,15 @@ class SSTest < Minitest::Test
     assert_includes last_response.body, "running, trance, cat"
   end
 
+    def test_error
+
+    get "/words?string=fartyfart"
+
+    assert last_response.ok?
+
+    assert_includes last_response.body, "I'm sorry"
+  end
+
 end
 
 
