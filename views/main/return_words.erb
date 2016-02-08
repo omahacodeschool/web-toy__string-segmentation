@@ -1,0 +1,6 @@
+<!-- require 'string_segmenter'
+ -->
+<p> Your original string was <u><%= params[:string] %></u>.</p>
+
+
+ <p> Your string now returns <u> <%= @string.segment_string(params[:string]).join(', ') %> </u>.</p>
