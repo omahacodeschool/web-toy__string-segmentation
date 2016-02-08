@@ -7,12 +7,11 @@ class SSTest < Minitest::Test
     MyApp
   end
 
-  # The actual tests go below this comment.
-  
+
+   # The actual tests go below this comment
+   
+def test_segment_string
+  get 'onestwosthrees'
+  assert last_response.ok?
+  assert_includes last_response.body, "ones twos threes"
 end
-
-
-
-
-
-

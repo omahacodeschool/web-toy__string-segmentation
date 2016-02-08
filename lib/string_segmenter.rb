@@ -1,4 +1,4 @@
-require_relative "dictionary"
+require "./lib/dictionary"
 
 def segment_string(str)
   i = 0 
