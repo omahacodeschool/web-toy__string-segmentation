@@ -12,8 +12,7 @@ MyApp.get "/" do
   erb :"main/welcome"
 end
 
-MyApp.get "/:string" do
-  x = segment_string(params[:string])
-  @result = x.join(" ")
+MyApp.get "/form" do
+  @x = segment_string(params[:string])
   erb :"main/form"
 end
