@@ -16,3 +16,9 @@ MyApp.get "/:str" do
   @words = StringSegmenter.new.segment_string(params[:str])
   erb :"main/show_words"
 end
+
+
+ MyApp.post "/main/show_words" do
+  @words = StringSegmenter.new.segment_string(params[:string])
+  erb :"main/show_words"
+end
