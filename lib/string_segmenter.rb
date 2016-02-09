@@ -8,8 +8,8 @@ class StringSegmenter
     @this_many = 1
   end
 
-  def run_string_segmenter(orig_str)
-    @str = orig_str
+  def run_string_segmenter(string_to_segment)
+    @str = string_to_segment
     @start_arr = @str.chars
     empty_str?
     until_empty_start_arr
@@ -26,8 +26,8 @@ class StringSegmenter
       start_arr_true
       if test_arr_single
       else
-        test_arr_nested
-        test_arr_dangler
+         test_arr_nested
+         test_arr_dangler
       end
       @this_many = 1
       @start_arr.shift(@valid_arr[-1].length.to_i)
