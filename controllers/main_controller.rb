@@ -12,8 +12,8 @@ MyApp.get "/" do
   erb :"main/welcome"
 end
 
-MyApp.get "/segment/:text" do
-  x = Segment.new(params[:text])
+MyApp.get "/segment" do
+  x = Segment.new(params["string_to_segment"])
   x.run_program
   @words = x.final_words
 
