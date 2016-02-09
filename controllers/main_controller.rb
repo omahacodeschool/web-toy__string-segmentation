@@ -16,4 +16,6 @@ MyApp.get "/segment/:text" do
   x = Segment.new(params[:text])
   x.run_program
   @words = x.final_words
+
+  erb :"result"
 end
