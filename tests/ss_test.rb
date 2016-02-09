@@ -9,7 +9,7 @@ class SSTest < Minitest::Test
 
 
    # The actual tests go below this comment
-   
+
 def test_segment_string
   get 'onestwosthrees'
   assert last_response.ok?

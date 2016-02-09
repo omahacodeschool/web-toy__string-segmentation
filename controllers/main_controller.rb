@@ -1,3 +1,5 @@
+require_relative "../lib/string_segmenter"
+
 # The path being defined for this controller action is just "/", meaning 
 # the root path. It's the homepage.
 MyApp.get "/" do
@@ -11,12 +13,12 @@ MyApp.get "/" do
 end
 
 MyApp.get "/string" do
-  x = segment_string(params[:string])
-  @segments = x.join(" ")
-  erb :"main/welcome"
+  x = Segment.new
+  @segments = x.segment_string(params["stringtosegment"])
+  erb :"main/result"
 end
 
-
+    
 #{}```ruby
 #get "/timeline" do
 #  @events = Event.all
